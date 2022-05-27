@@ -9,6 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class CarDealership {
 
     public static final int TIME_TO_SHOP = 1000;
+    public static final int DELIVERY_TIME = 1000;
     public static final int CAR_SUPPLY_PLAN = 10;
     private final List<Car> cars = new ArrayList<>(CAR_SUPPLY_PLAN);
     private final CarFactory carFactory = new CarFactory();
@@ -24,7 +25,7 @@ public class CarDealership {
         for (int i = 0; i < CAR_SUPPLY_PLAN; i++) {
             acceptOneCar();
             try {
-                Thread.sleep(TIME_TO_SHOP);
+                Thread.sleep(DELIVERY_TIME);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
